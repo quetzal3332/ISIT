@@ -218,29 +218,6 @@ class Player:
         fr.close()
 
 
-class HumanPlayer:
-    def __init__(self, name):
-        self.name = name
-
-    def chooseAction(self, positions):
-        while True:
-            row = int(input("Введите номер строки для вашего хода:"))
-            col = int(input("Введите номер столбца для вашего хода:"))
-            action = (row, col)
-            if action in positions:
-                return action
-            else:
-                print("Кажется, вы выбрали занятую клетку!\nНомера строк и столбцов начинаются с 0.")
-
-    def addState(self, state):
-        pass
-
-    def feedReward(self, reward):
-        pass
-
-    def reset(self):
-        pass
-
 def show_stats(exp_p1, exp_p2, rounds):
     x = np.arange(rounds)
     y1 = sorted(np.array(exp_p1))
